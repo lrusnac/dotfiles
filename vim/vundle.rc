@@ -6,7 +6,7 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required!
 
-Plugin 'vundle/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 
 Plugin 'comments.vim'
