@@ -1,0 +1,15 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+
+Plugin 'vundle/vundle'
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'comments.vim'
+Plugin 'ack.vim'
+
+filetype plugin indent on     " required!
