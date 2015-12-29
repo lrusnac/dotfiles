@@ -9,5 +9,7 @@ if [ $CONFIG == 'all' -o $CONFIG == 'vim' ]; then
     cp ~/.vimrc{,_bk}
     cp .vimrc ~/.vimrc
     echo "Copied vimrc to ~/.vimrc. Old vimrc copied to ~/.vimrc_bk"
+    vim +PluginInstall +qall
+    echo "Installed vim plugins"
 fi
 
