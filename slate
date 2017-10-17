@@ -1,0 +1,75 @@
+# Slate config - https://github.com/jigish/slate
+
+config defaultToCurrentScreen true
+config layoutFocusOnActivate true
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+config windowHintsFontColor "255;255;255;1.0"
+config windowHintsBackgroundColor "0;0;0;0"
+#config gridBackgroundColor "75;77;81;0.9"
+#config gridCellBackgroundColor "100;106;116;0.8"
+#config gridCellSelectedColor "50;53;58;0.8"
+config gridRoundedCornerSize 4
+config gridCellRoundedCornerSize 4
+
+#alias hyper ctrl;shift;alt;cmd
+alias hyper f19
+
+# Aliases
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias lefttwothirds move screenOriginX;screenOriginY screenSizeX*0.7;screenSizeY
+alias rightthird move screenOriginX+screenSizeX*0.7;screenOriginY screenSizeX*0.3;screenSizeY
+alias toptwothirds push up bar-resize:screenSizeY*0.7
+alias bottomthird push down bar-resize:screenSizeY*0.3
+alias toprightcorner corner top-right resize:screenSizeX/2;screenSizeY*0.7
+alias bottomrightcorner corner bottom-right resize:screenSizeX/2;screenSizeY*0.3
+alias center move screenOriginX+screenSizeX/4;screenOriginY+screenSizeY*0.125 screenSizeX/2;screenSizeY*0.75
+
+# Layouts
+layout layout1 'Google Chrome':REPEAT,IGNORE_FAIL ${righthalf}
+layout layout1 'Code':REPEAT ${lefthalf}
+
+layout development 'iTerm2':REPEAT ${rightthird}
+layout development 'Code':REPEAT ${lefttwothirds}
+
+# Location bindings
+bind ]:${hyper} grid padding:8 0:8,8
+bind ${hyper}:${hyper} grid padding:8 0:8,8
+bind up:${hyper} ${full}
+bind left:${hyper} ${lefthalf}
+bind right:${hyper} ${righthalf}
+bind down:${hyper} ${center}
+bind 1:${hyper} layout layout1
+bind 2:${hyper} layout development
+
+bind delete:${hyper} hide 'current'
+bind t:${hyper} focus 'iTerm2'
+bind c:${hyper} focus 'Google Chrome'
+bind a:${hyper} focus 'Code'
+bind e:${hyper} focus 'Eclipse'
+bind i:${hyper} focus 'IntelliJ IDEA'
+bind s:${hyper} focus 'Safari'
+
+# Hinting
+bind backslash:${hyper} hint ASDFLKJGHQWERTYUIOPCVBN
+bind space:${hyper} hint ASDFLKJGHQWERTYUIOPCVBN
+bind ':${hyper} hint ASDFLKJGHQWERTYUIOPCVBN
+
+# Nudge Bindings
+#bind right:alt nudge +5% +0
+#bind left:alt  nudge -5% +0
+#bind up:alt    nudge +0   -5%
+#bind down:alt  nudge +0   +5%
+
+# Resize Bindings
+#bind right:shift;alt       resize +5% +0
+#bind left:shift;alt        resize -5% +0
+#bind up:shift;alt          resize +0   -5%
+#bind down:shift;alt        resize +0   +5%
+#bind right:ctrl;alt  resize -5% +0 bottom-right
+#bind left:ctrl;alt   resize +5% +0 bottom-right
+#bind up:ctrl;alt     resize +0   +5% bottom-right
+#bind down:ctrl;alt   resize +0   -5% bottom-right

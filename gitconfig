@@ -1,0 +1,9 @@
+[user]
+	name = Leonid
+	email = leonidrusnac4@gmail.com
+[push]
+	default = matching
+[github]
+	user = lrusnac
+[core]
+	editor = /usr/local/bin/vim
