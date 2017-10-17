@@ -1,0 +1,4 @@
+just my mac setup
+
+preinstall `git` then run:
+`sh https://github.com/lrusnac/dotfiles/blob/master/bin/installconfig.sh`
