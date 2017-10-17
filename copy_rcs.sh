@@ -42,6 +42,8 @@ if [ $CONFIG == 'all' -o $CONFIG == 'zsh' ]; then
     cp ~/.zshrc{,_bk}
     cp zshrc ~/.zshrc
     echo "Copied zshrc to ~/.zshrc. Old zshrc copied to ~/.zshrc_bk"
+
+    npm install --global pure-prompt
 fi
 
 if [ $CONFIG == 'all' -o $CONFIG == 'git' ]; then
