@@ -14,6 +14,16 @@ if [ $CONFIG == 'all' -o $CONFIG == 'mac' ]; then
     cat homebrew-cask-packages | xargs brew cask install
 fi
 
+# if [ $CONFIG == 'all' -o $CONFIG == 'iterm' ]; then
+#     mkdir ~/.iterm2
+#     cp iterm ~/.iterm2/iterm
+#     # Specify the preferences directory
+#     defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.iterm2"
+#     # Tell iTerm2 to use the custom preferences in the directory
+#     defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+#     # https://github.com/sindresorhus/iterm2-snazzy 11pt Hack Regular
+# fi
+
 if [ $CONFIG == 'all' -o $CONFIG == 'vim' ]; then
     sh bin/installvimconfig.sh
     cp ~/.vimrc{,_bk}
